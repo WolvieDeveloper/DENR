@@ -1,0 +1,116 @@
+:root {
+  --primary-color: #2d6a4f;
+  --secondary-color: #40916c;
+  --light-color: #f8f9fa;
+  --dark-color: #1b4332;
+  --accent-color: #52b788;
+  --warning-color: #f48c06;
+  --danger-color: #e63946;
+}
+
+body {
+  background-color: #f0f2f5;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+  background-color: #2d6a4f !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.navbar-brand {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.navbar-brand img {
+  width: 40px;
+  height: auto;
+}
+.navbar-link {
+  font-weight: 500;
+  padding: 0.8rem 1rem !important;
+  transition: all 0.3s ease;
+}
+.navbar-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.dashboard-header {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+@media (max-width: 768px) {
+  .dashboard-header {
+    padding: 1.5rem;
+  }
+}
+.dashboard-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1b4332;
+  margin-bottom: 0;
+}
+.dashboard-subtitle {
+  color: #6c757d;
+  font-size: 1rem;
+}
+
+.stat-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+@media (max-width: 768px) {
+  .stat-card {
+    margin-bottom: 1rem;
+  }
+}
+.stat-card-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.stat-card-body {
+  padding: 1.5rem;
+}
+.stat-card-icon {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.stat-card-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.stat-card-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.footer {
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  color: #6c757d;
+  font-size: 0.875rem;
+  text-align: center;
+  border-top: 1px solid #dee2e6;
+}/*# sourceMappingURL=admin-dash.css.map */

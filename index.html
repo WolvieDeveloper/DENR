@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="DENR.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <title>Department of Environment and Natural Resources</title>
+    <style>
+      :root {
+        --primary-color: #2c6e49;
+        --secondary-color: #4c956c;
+        --accent-color: #fefee3;
+        --dark-color: #333;
+        --light-color: #f8f9fa;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      .navbar {
+        background-color: var(--primary-color) !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 12px 0;
+      }
+
+      .navbar-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+      }
+
+      .navbar-brand span {
+        font-size: 18px;
+      }
+
+      .hero {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4)
+          ),
+          url(https://denr.gov.ph/wp-content/uploads/2025/03/Banner_March-14-2025-as-Intl-Day-of-Action-for-Rivers.jpg);
+        background-size: cover;
+        background-position: center;
+        color: white;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        padding: 0 20px;
+        z-index: 2;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .hero p {
+        font-size: 1.5rem;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      }
+
+      .request-card {
+        background-color: rgba(44, 110, 73, 0.9);
+        color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 320px;
+        margin: 30px auto 0;
+        backdrop-filter: blur(5px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .request-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      }
+
+      .request-card i,
+      .request-card svg {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        color: var(--accent-color);
+      }
+
+      .request-card p {
+        font-size: 1.2rem;
+        margin: 15px 0;
+        text-shadow: none;
+      }
+
+      .btn-success {
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
+        padding: 10px 25px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border-radius: 50px;
+      }
+
+      .btn-success:hover {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        transform: scale(1.05);
+      }
+
+      .services-section {
+        padding: 80px 0;
+        background-color: #f9f9f9;
+      }
+
+      .section-heading {
+        position: relative;
+        margin-bottom: 60px;
+        text-align: center;
+      }
+
+      .section-heading h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 15px;
+      }
+
+      .section-heading p {
+        max-width: 700px;
+        margin: 0 auto;
+        color: #666;
+      }
+
+      .section-heading:after {
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 3px;
+        background-color: var(--secondary-color);
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .service-card {
+        height: 100%;
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .service-card .card-body {
+        padding: 30px;
+      }
+
+      .service-icon {
+        background-color: var(--primary-color);
+        color: white;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        margin: 0 auto 20px;
+      }
+
+      .service-card .card-title {
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: var(--dark-color);
+        text-align: center;
+      }
+
+      .service-card .card-text {
+        color: #666;
+        text-align: center;
+      }
+
+      .about-section {
+        padding: 80px 0;
+        background-color: white;
+      }
+
+      .about-content h2 {
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+      }
+
+      .about-content p {
+        margin-bottom: 20px;
+        color: #555;
+      }
+
+      .about-stats {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 30px;
+      }
+
+      .stat-item {
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
+        margin: 15px;
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--secondary-color);
+      }
+
+      .stat-label {
+        font-size: 1rem;
+        color: #666;
+      }
+
+      .footer {
+        background: var(--dark-color);
+        color: white;
+        padding: 60px 0 20px;
+      }
+
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 30px;
+      }
+
+      .footer-section h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .footer-section h3:after {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 2px;
+        background-color: var(--secondary-color);
+        bottom: 0;
+        left: 0;
+      }
+
+      .footer-section p,
+      .footer-section a {
+        color: #aaa;
+        transition: color 0.3s ease;
+      }
+
+      .footer-section a:hover {
+        color: white;
+        text-decoration: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        background-color: var(--secondary-color);
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .footer-bottom p {
+        color: #aaa;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero p {
+          font-size: 1.2rem;
+        }
+
+        .services-section,
+        .about-section {
+          padding: 50px 0;
+        }
+
+        .section-heading h2 {
+          font-size: 2rem;
+        }
+
+        .request-card {
+          max-width: 280px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="denr.png" alt="DENR Logo" width="40px" />
+          <span>Department of Environment and Natural Resources</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Protecting Our Natural Resources</h1>
+        <p>
+          Committed to environmental conservation and sustainable development
+        </p>
+        <div class="request-card">
+          <i class="fas fa-tools"></i>
+          <p>Need technical support?</p>
+          <a href="reqform.php" class="btn btn-success"
+            >Submit ICT Service Request</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div id="services" class="services-section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Our Services</h2>
+          <p>
+            Dedicated to preserving and protecting our natural environment
+            through various specialized services
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="service-card card">
+              <div class="card-body">
+                <div class="service-icon">
+                  <i class="fas fa-leaf"></i>
+                </div>
+                <h5 class="card-title">ENVIRONMENTAL MANAGEMENT</h5>
+                <p class="card-text">
+                  Implementing comprehensive environmental protection programs
+                  to manage and protect our air, water, and land resources for
+                  sustainable development.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="service-card card">
+              <div class="card-body">
+                <div class="service-icon">
+                  <i class="fas fa-mountain"></i>
+                </div>
+                <h5 class="card-title">MINES AND GEOSCIENCES</h5>
+                <p class="card-text">
+                  Ensuring responsible mining practices and conducting
+                  geological assessments to promote sustainable resource
+                  utilization while safeguarding the environment.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="service-card card">
+              <div class="card-body">
+                <div class="service-icon">
+                  <i class="fas fa-tree"></i>
+                </div>
+                <h5 class="card-title">FOREST MANAGEMENT</h5>
+                <p class="card-text">
+                  Conserving and developing forest resources through sustainable
+                  practices, reforestation programs, and biodiversity
+                  conservation initiatives.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="about" class="about-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 about-content">
+            <h2>About DENR</h2>
+            <p>
+              The Department of Environment and Natural Resources (DENR) is the
+              primary agency responsible for the conservation, management,
+              development, and proper use of the country's environment and
+              natural resources.
+            </p>
+            <p>
+              Our mission is to ensure the sustainable use of natural resources,
+              protect and preserve the environment, and build resilient
+              communities through responsive governance and strategic
+              partnerships.
+            </p>
+
+            <div class="about-stats">
+              <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Years of Service</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">16</div>
+                <div class="stat-label">Regional Offices</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">1M+</div>
+                <div class="stat-label">Hectares Protected</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="/api/placeholder/600/400"
+              alt="DENR Activities"
+              class="img-fluid rounded shadow"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer" id="contact">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> DENR Building, Visayas
+              Avenue, Diliman, Quezon City
+            </p>
+            <p><i class="fas fa-phone"></i> (02) 8929-6626</p>
+            <p><i class="fas fa-envelope"></i> info@denr.gov.ph</p>
+
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">News & Updates</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Resources</h3>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#">Laws & Regulations</a></li>
+              <li><a href="#">Publications</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Department of Environment and Natural Resources. All
+            rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
