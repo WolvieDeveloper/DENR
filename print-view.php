@@ -327,7 +327,7 @@
                 <div class="form-row">
                     <div class="form-col signature-line">
                         <p><strong>Requesting Personnel:</strong></p>
-                        <p style="text-transform: uppercase;"><u><?php echo htmlspecialchars($requestingPersonnel); ?></u></p>
+                        <p style="text-transform: uppercase;"><u><b><?php echo htmlspecialchars($requestingPersonnel); ?></b></u></p>
                     </div>
                     <div class="form-col signature-line">
                         <p><strong>Technical Support:</strong></p>
@@ -338,8 +338,8 @@
                 <div class="form-row">
                     <div class="form-col"></div>
                     <div class="form-col signature-line">
-                        <p class="signature-name">BENJAMIN A. CALUB</p>
-                        <p class="signature-title">Information System Analyst II</p>
+                        <p class="signature-name " contenteditable="true">BENJAMIN A. CALUB</p>
+                        <p class="signature-title" contenteditable="true">Information System Analyst II</p>
                     </div>
                 </div>
             </div>

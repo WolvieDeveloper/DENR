@@ -93,7 +93,7 @@ if (!isset($_SESSION['id'])) {
 </div>
 
 
-            <div class="col-md-4">
+            <!-- <div class="col-md-4">
                 <div class="card stat-card">
                     <div class="stat-card-header bg-primary text-white">
                         <div class="d-flex justify-content-between align-items-center">
@@ -107,20 +107,48 @@ if (!isset($_SESSION['id'])) {
                         </div>
                         <h2 class="stat-value">
                             <?php
-                            $query = "SELECT COUNT(*) as total FROM reqform";
-                            $result = mysqli_query($con, $query);
-                            $fetch = mysqli_fetch_assoc($result);
-                            echo $fetch['total'];
+                            // $query = "SELECT COUNT(*) as total FROM reqform";
+                            // $result = mysqli_query($con, $query);
+                            // $fetch = mysqli_fetch_assoc($result);
+                            // echo $fetch['total'];
                             ?>
                         </h2>
                         <p class="stat-label mb-0">All Time Requests</p>
                         <a href="request.php" class="btn btn-outline-primary mt-3 w-100">View All Requests</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
+
+            <!-- Pending -->
+            <div class="col-md-4">
+                <div class="card stat-card">
+                    <div class="stat-card-header bg-danger text-white">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">Pending</h5>
+                            <i class="fas fa-clock fa-lg"></i>
+                        </div>
+                    </div>
+                    <div class="stat-card-body text-center">
+                        <div class="stat-icon mx-auto">
+                            <i class="fas fa-clock fa-2x text-white"></i>
+                        </div>
+                        <h2 class="stat-value">
+                            <?php
+                            $query = "SELECT COUNT(*) as total FROM reqform WHERE status = 'pending'";
+                            $result = mysqli_query($con, $query);
+                            $fetch = mysqli_fetch_assoc($result);
+                            echo $fetch['total'];
+                            ?>
+                        </h2>
+                        <p class="stat-label mb-0">Awaiting Action</p>
+                        <a href="admin-pending.php" class="btn btn-outline-danger mt-3 w-100">View Pending</a>
+                    </div>
+                </div>
+            </div>
             
-            
+
+
             <!-- Completed -->
             <div class="col-md-4">
                 <div class="card stat-card">
@@ -148,32 +176,9 @@ if (!isset($_SESSION['id'])) {
                 </div>
             </div>
             
-            <!-- Pending -->
-            <div class="col-md-4">
-                <div class="card stat-card">
-                    <div class="stat-card-header bg-danger text-white">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <h5 class="mb-0">Pending</h5>
-                            <i class="fas fa-clock fa-lg"></i>
-                        </div>
-                    </div>
-                    <div class="stat-card-body text-center">
-                        <div class="stat-icon mx-auto">
-                            <i class="fas fa-clock fa-2x text-white"></i>
-                        </div>
-                        <h2 class="stat-value">
-                            <?php
-                            $query = "SELECT COUNT(*) as total FROM reqform WHERE status = 'pending'";
-                            $result = mysqli_query($con, $query);
-                            $fetch = mysqli_fetch_assoc($result);
-                            echo $fetch['total'];
-                            ?>
-                        </h2>
-                        <p class="stat-label mb-0">Awaiting Action</p>
-                        <a href="admin-pending.php" class="btn btn-outline-danger mt-3 w-100">View Pending</a>
-                    </div>
-                </div>
-            </div>
+            
+            
+           
         </div>
         
 
@@ -266,7 +271,7 @@ if (!isset($_SESSION['id'])) {
                             </div>
                             <div class="flex-grow-1 ms-3">
                                 <h6 class="mb-0">File Storage</h6>
-                                <small class="text-muted">78% Available</small>
+                                <small class="text-muted">90% Available</small>
                             </div>
                         </div>
                         <div class="d-flex align-items-center">

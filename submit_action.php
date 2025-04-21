@@ -119,7 +119,7 @@ mysqli_stmt_close($stmt);
         mysqli_query($con, $action_query);
 
         // Redirect to a success page
-        header('Location: request.php?notif=ActionSubmitted');
+        header('Location: admin-pending.php?notif=ActionSubmitted');
     } else {
         echo "Error updating record: " . mysqli_error($con);
     }

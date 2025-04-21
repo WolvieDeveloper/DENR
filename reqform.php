@@ -204,7 +204,7 @@ error_reporting(E_ALL);
           <a class="nav-link active" aria-current="page" href="index.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Request Status</a>
+          <a class="nav-link" href="reqstatus.php">Request Status</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact Support</a>

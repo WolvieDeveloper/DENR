@@ -58,6 +58,7 @@
         color: white;
         height: 70vh;
         display: flex;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
         text-align: center;
@@ -94,8 +95,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        flex: 1;
         max-width: 320px;
-        margin: 30px auto 0;
         backdrop-filter: blur(5px);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
@@ -131,6 +132,15 @@
         background-color: var(--primary-color);
         border-color: var(--primary-color);
         transform: scale(1.05);
+      }
+
+      .request-cards-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 30px;
+        width: 100%;
       }
 
       .services-section {
@@ -404,12 +414,20 @@
         <p>
           Committed to environmental conservation and sustainable development
         </p>
-        <div class="request-card">
-          <i class="fas fa-tools"></i>
-          <p>Need technical support?</p>
-          <a href="reqform.php" class="btn btn-success"
-            >Submit ICT Service Request</a
-          >
+        <div class="request-cards-container">
+          <div class="request-card">
+            <i class="fas fa-tools"></i>
+            <p>Need technical support?</p>
+            <a href="reqform.php" class="btn btn-success"
+              >Submit ICT Service Request</a
+            >
+          </div>
+
+          <div class="request-card">
+            <i class="fas fa-check"></i>
+            <p>Check the status of your request</p>
+            <a href="reqstatus.php" class="btn btn-success">View Request</a>
+          </div>
         </div>
       </div>
     </div>
