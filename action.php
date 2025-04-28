@@ -114,6 +114,7 @@ $status = $requestData['status'] ?? $requestData['request_status'] ?? 'Pending';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Action form for DENR administrative purposes">
+    <link rel="icon" href="DENR.png" />
     <title>DENR Action Form - Control Number: <?php echo h($controlnumber); ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -332,7 +333,7 @@ $status = $requestData['status'] ?? $requestData['request_status'] ?? 'Pending';
         <div class="form-container">
             <div class="action-header">
                 <div class="header-flex">
-                    <img src="denr.png" alt="DENR Logo" class="denr-logo">
+                    <img src="https://denr.gov.ph/wp-content/uploads/2023/04/denr-logo-png-1-1.png" alt="DENR Logo" class="denr-logo">
                     <div>
                         <h2 class="mb-0">DENR System Action Form</h2>
                         <p class="mb-0">Department of Environment and Natural Resources</p>

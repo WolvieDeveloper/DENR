@@ -25,7 +25,7 @@ if (!isset($_SESSION['id'])) {
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="admin-dash.php">
-                <img src="denr.png" alt="DENR Logo"> DENR Admin Portal
+                <img src="https://denr.gov.ph/wp-content/uploads/2023/04/denr-logo-png-1-1.png" alt="DENR Logo"> DENR Admin Portal
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -33,14 +33,14 @@ if (!isset($_SESSION['id'])) {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="admin-dash.php"><i class="fas fa-home me-1"></i> Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="request.php"><i class="fas fa-clipboard-list me-1"></i> Requests</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="request.php"><i class="fas fa-clipboard-list me-1"></i> Requests</a></li> -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
                             <i class="fas fa-user-circle me-1"></i> Account
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="admin-profile.php"><i class="fas fa-user me-1"></i> Profile</a></li>
-                            <li><a class="dropdown-item" href="settings.php"><i class="fas fa-cog me-1"></i> Settings</a></li>
+                            <!-- <li><a class="dropdown-item" href="settings.php"><i class="fas fa-cog me-1"></i> Settings</a></li> -->
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="logout.php"><i class="fas fa-sign-out-alt me-1"></i> Log Out</a></li>
                         </ul>
@@ -53,14 +53,12 @@ if (!isset($_SESSION['id'])) {
     <div class="container mt-4">
         <div class="dashboard-header">
             <div class="row align-items-center">
-                <div class="col-md-8">
-                    <h1 class="dashboard-title">Admin Dashboard</h1>
+               <!-- <h1 class="dashboard-title">Admin Dashboard</h1>
                     <p class="dashboard-subtitle mb-0">Welcome to the DENR Request Management System</p>
                 </div>
-                <div class="col-md-4 text-md-end">
-                    <button class="btn btn-outline-primary me-2"><i class="fas fa-file-export me-1"></i> Export Report</button>
-                    <button class="btn btn-primary"><i class="fas fa-sync-alt me-1"></i> Refresh</button>
-                </div>
+                <div class="col-md-4 text-md-end"> -->
+                <!-- <a href="admin-export.php" class="btn btn-outline-dark"><i class="fas fa-chart-bar me-2"></i>Generate Reports</a> -->
+                
             </div>
         </div>
         
@@ -68,7 +66,7 @@ if (!isset($_SESSION['id'])) {
 
         <div class="col-md-4">
     <div class="card stat-card">
-        <div class="stat-card-header bg-warning text-white">
+        <div class="stat-card-header bg-primary text-white">
             <div class="d-flex justify-content-between align-items-center">
                 <h5 class="mb-0">New Request</h5>
                 <i class="fas fa-star fa-lg"></i>
@@ -87,7 +85,7 @@ if (!isset($_SESSION['id'])) {
                 ?>
             </h2>
             <p class="stat-label mb-0">Description of the new category</p>
-            <a href="admin-newreq.php" class="btn btn-outline-warning mt-3 w-100">View Details</a>
+            <a href="admin-newreq.php" class="btn btn-outline-primary mt-3 w-100">View Details</a>
         </div>
     </div>
 </div>
@@ -244,47 +242,14 @@ if (!isset($_SESSION['id'])) {
                     </div>
                     <div class="card-body">
                         <div class="d-grid gap-2">
-                            <a href="admin-request.php" class="btn btn-outline-primary"><i class="fas fa-plus me-2"></i>Create New Request</a>
-                            <a href="reports.php" class="btn btn-outline-secondary"><i class="fas fa-chart-bar me-2"></i>Generate Reports</a>
-                            <a href="users.php" class="btn btn-outline-dark"><i class="fas fa-users me-2"></i>Manage Users</a>
+                            <a href="admin-request.php" class="btn btn-outline-primary"><i class="fas fa-plus me-2"></i>Manual Input Request</a>
+                            <a href="admin-export.php" class="btn btn-outline-dark"><i class="fas fa-chart-bar me-2"></i>Generate Reports</a>
+                           
                         </div>
                     </div>
                 </div>
                 
-                <div class="card">
-                    <div class="card-header bg-white">
-                        <h5 class="card-title mb-0">System Status</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="flex-shrink-0">
-                                <span class="badge bg-success rounded-circle p-2"><i class="fas fa-check"></i></span>
-                            </div>
-                            <div class="flex-grow-1 ms-3">
-                                <h6 class="mb-0">Database Connection</h6>
-                                <small class="text-muted">Online</small>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="flex-shrink-0">
-                                <span class="badge bg-success rounded-circle p-2"><i class="fas fa-check"></i></span>
-                            </div>
-                            <div class="flex-grow-1 ms-3">
-                                <h6 class="mb-0">File Storage</h6>
-                                <small class="text-muted">90% Available</small>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div class="flex-shrink-0">
-                                <span class="badge bg-success rounded-circle p-2"><i class="fas fa-check"></i></span>
-                            </div>
-                            <div class="flex-grow-1 ms-3">
-                                <h6 class="mb-0">Email Service</h6>
-                                <small class="text-muted">Operational</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
         

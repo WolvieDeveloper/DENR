@@ -30,7 +30,7 @@ if (!isset($_SESSION['id'])) {
     <title>DENR ICT Service Request Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
- 
+    <link rel="icon" href="DENR.png" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./style/admin-request.css">
     <style>
@@ -69,10 +69,10 @@ if (!isset($_SESSION['id'])) {
     <div class="container">
         <div class="header">
             <div style="display: flex; align-items: center;">
-                <img src="DENR.png" alt="DENR Logo" class="header-logo">
+                <img src="https://denr.gov.ph/wp-content/uploads/2023/04/denr-logo-png-1-1.png" alt="DENR" class="header-logo">
                 <h1>DENR ICT Service Request Form (Manual Input) </h1>
             </div>
-            <div class="status-badge">New Request</div>
+          
         </div>
         
         <form action="config.php" method="post">
